@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
-    <title>Time Left this week</title>
+    <title>Time Left in this month</title>
     <style>
         
         body{
@@ -49,18 +50,14 @@
 <body>
     
     <div id="counter">
-   
-    <div>
+
         <h2 class="box" id="days"></h2>
         <h2 class="box" id="hours"></h2>
         <h2 class="box" id="minutes"></h2>
         <h2 class="box" id="seconds"></h2>
-
         <h3>
-            Left in <br>This Week
+            Left in <br>This Month
         </h3>
-    </div>
-       
     </div>
 
 
@@ -75,8 +72,8 @@
     }
     function showRemaining (){
     now = new Date();
- 
-    days = 6 - now.getDay(); ;
+    days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
+    days = days_in_this_month- now.getDate();
     hours = 23 - now.getHours();
     minutes = 59 - now.getMinutes();
     seconds = 59 - now.getSeconds();
